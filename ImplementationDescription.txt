@@ -1,0 +1,50 @@
+# Implementation Description
+
+This JAVA project contains an E-commerce Scenario for electronic shopping using interactive shopping agents on behalf
+of retailers and customers and a broker agent as the middleman. The code simulates a system where customers place orders,
+retailers receive the orders, and a broker agent evaluates the offers and selects the best one for each customer.
+Note: These interactions follow a variant of the Contract-Net Protocol.
+Note: Additional parameters and methods are created for alternative Scenarios
+
+## Major Classes
+CustomerAgent: Represents a customer with a customerId and the ability to evaluate offers from retailers.
+RetailerAgent: Represents a retailer with a retailerId, a list of products, and methods to check if it can fulfill an
+order and receive offer invitations.
+BrokerAgent: Represents a broker agent that manages customers and retailers, receives customer orders, and evaluates
+offers from retailers.
+SystemSimulation: Contains the main method to simulate the system.
+
+### CustomerAgent.java: This agent acts on behalf of a customer with a customerId and the ability to evaluate offers
+from retailers.
+- the CustomerAgent.java interactions: The CustomerAgent class represents a customer with a customer ID and can evaluate
+ offers from retailers. The evaluateOffers method takes a list of RetailerAgentOffer objects, selects the best offer
+ based on the lowest price, and prints the result.
+
+### RetailerAgent.java: This agent acts on behalf of a retailer with a retailerId, a list of products, and methods to
+check if it can fulfil an order and receive offer invitations.
+- the RetailerAgent.java interactions: The RetailerAgent class represents a retailer with a retailer ID and a list of
+products it offers. The canFulfillOrder method checks if the retailer can fulfil a customer's order based on the
+requested product ID, quantity, and available stock. The receiveOfferInvitation method prints the received offer if
+the stock is greater than zero.
+
+### BrokerAgent.java: This agent facilitates the shopping process. it has access to customer profiles and retailer
+product databases. Represents a broker agent that manages customers and retailers, receives customer orders, and
+evaluates offers from retailers.
+- the BrokerAgent.java interactions: The BrokerAgent class represents a broker agent that manages customers and retailers.
+The receiveCustomerOrder method takes a customer order and checks each retailer to see if they can fulfil the order.
+If a retailer can fulfil the order, a new RetailerAgentOffer object is created and added to the list of offers.
+Finally, the method evaluates the offers from all retailers for each customer.
+### The SystemSimulation class contains the main method, which simulates the system by creating instances of products,
+retailers, customers, and the broker agent. It also demonstrates the flow of customer orders and retailer offers.
+
+## Minor Classes
+### ProductDatabase.java: Represents a product with properties like productId, productName, and productPrice.
+### CustomerAgentOrder.java: Represents a customer's order with properties productId and quantity.
+### RetailerAgentOffer.java: Represents an offer from a retailer with properties productId, productPrice, and stock.
+
+
+
+
+
+
+
